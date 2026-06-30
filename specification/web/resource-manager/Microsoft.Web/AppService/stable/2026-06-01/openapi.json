@@ -6462,6 +6462,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List the silos of an App Service plan": {
+            "$ref": "./examples/ServerFarmSiloResources_ListServerFarmSilos.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -6512,6 +6517,11 @@
               "$ref": "#/definitions/DefaultErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Get a silo of an App Service plan": {
+            "$ref": "./examples/ServerFarmSiloResources_GetServerFarmSilo.json"
+          }
         }
       },
       "put": {
@@ -6561,12 +6571,20 @@
               "$ref": "#/definitions/ServerFarmSilo"
             }
           },
-          "202": {
-            "description": "Resource operation accepted.",
+          "201": {
+            "description": "Resource 'ServerFarmSilo' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ServerFarmSilo"
+            },
             "headers": {
-              "Location": {
+              "Azure-AsyncOperation": {
                 "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
               }
             }
           },
@@ -6577,8 +6595,13 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Create or update a silo of an App Service plan": {
+            "$ref": "./examples/ServerFarmSiloResources_CreateOrUpdateServerFarmSilo.json"
+          }
+        },
         "x-ms-long-running-operation-options": {
-          "final-state-via": "location",
+          "final-state-via": "azure-async-operation",
           "final-state-schema": "#/definitions/ServerFarmSilo"
         },
         "x-ms-long-running-operation": true
@@ -6626,6 +6649,11 @@
             "schema": {
               "$ref": "#/definitions/DefaultErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Delete a silo of an App Service plan": {
+            "$ref": "./examples/ServerFarmSiloResources_DeleteServerFarmSilo.json"
           }
         }
       }
@@ -15868,6 +15896,11 @@
               "$ref": "#/definitions/DefaultErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Get the last known good state of a web app": {
+            "$ref": "./examples/LastKnownGoodResources_GetLastKnownGood.json"
+          }
         }
       }
     },
@@ -15908,6 +15941,11 @@
             "schema": {
               "$ref": "#/definitions/DefaultErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Mark the current state of a web app as last known good": {
+            "$ref": "./examples/LastKnownGoodResources_MarkLastKnownGood.json"
           }
         }
       }
@@ -16080,6 +16118,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List managed traffic configuration of a web app": {
+            "$ref": "./examples/ManagedTrafficConfigResources_ListManagedTrafficConfigs.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -16123,6 +16166,11 @@
               "$ref": "#/definitions/DefaultErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Get managed traffic configuration of a web app": {
+            "$ref": "./examples/ManagedTrafficConfigResources_GetManagedTrafficConfig.json"
+          }
         }
       },
       "put": {
@@ -16165,11 +16213,22 @@
               "$ref": "#/definitions/ManagedTrafficConfigResource"
             }
           },
+          "201": {
+            "description": "Resource 'ManagedTrafficConfigResource' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ManagedTrafficConfigResource"
+            }
+          },
           "default": {
             "description": "An unexpected error response.",
             "schema": {
               "$ref": "#/definitions/DefaultErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Update managed traffic configuration of a web app": {
+            "$ref": "./examples/ManagedTrafficConfigResources_UpdateManagedTrafficConfig.json"
           }
         }
       }
@@ -19200,6 +19259,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List the silos of a web app": {
+            "$ref": "./examples/SiteSiloResources_ListSiteSilos.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -19250,6 +19314,11 @@
               "$ref": "#/definitions/DefaultErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Get a silo of a web app": {
+            "$ref": "./examples/SiteSiloResources_GetSiteSilo.json"
+          }
         }
       },
       "put": {
@@ -19299,12 +19368,20 @@
               "$ref": "#/definitions/SiteSilo"
             }
           },
-          "202": {
-            "description": "Resource operation accepted.",
+          "201": {
+            "description": "Resource 'SiteSilo' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/SiteSilo"
+            },
             "headers": {
-              "Location": {
+              "Azure-AsyncOperation": {
                 "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
               }
             }
           },
@@ -19315,8 +19392,13 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Create or update a silo of a web app": {
+            "$ref": "./examples/SiteSiloResources_CreateOrUpdateSiteSilo.json"
+          }
+        },
         "x-ms-long-running-operation-options": {
-          "final-state-via": "location",
+          "final-state-via": "azure-async-operation",
           "final-state-schema": "#/definitions/SiteSilo"
         },
         "x-ms-long-running-operation": true
@@ -19364,6 +19446,11 @@
             "schema": {
               "$ref": "#/definitions/DefaultErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Delete a silo of a web app": {
+            "$ref": "./examples/SiteSiloResources_DeleteSiteSilo.json"
           }
         }
       }
@@ -46492,6 +46579,11 @@
           "format": "date-time",
           "description": "Time when the last known good revision was created.",
           "readOnly": true
+        },
+        "provisioningState": {
+          "$ref": "#/definitions/SiloProvisioningState",
+          "description": "Provisioning state of the last known good resource.",
+          "readOnly": true
         }
       }
     },
@@ -47030,6 +47122,11 @@
           "x-ms-identifiers": [
             "region"
           ]
+        },
+        "provisioningState": {
+          "$ref": "#/definitions/SiloProvisioningState",
+          "description": "Provisioning state of the managed traffic configuration.",
+          "readOnly": true
         }
       }
     },
@@ -50999,6 +51096,7 @@
         "InProgress",
         "Succeeded",
         "Failed",
+        "Canceled",
         "Deleting"
       ],
       "x-ms-enum": {
@@ -51019,6 +51117,11 @@
             "name": "Failed",
             "value": "Failed",
             "description": "Provisioning failed."
+          },
+          {
+            "name": "Canceled",
+            "value": "Canceled",
+            "description": "Provisioning was canceled."
           },
           {
             "name": "Deleting",
@@ -53024,7 +53127,7 @@
           "description": "Provisioning state of the silo.",
           "readOnly": true
         },
-        "followLKG": {
+        "followLastKnownGood": {
           "type": "boolean",
           "description": "Whether the silo should follow the last known good revision."
         },

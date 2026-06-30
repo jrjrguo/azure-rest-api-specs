@@ -51,9 +51,6 @@ interface SiteSiloResources {
    */
   createOrUpdateSiteSilo is ArmResourceCreateOrReplaceAsync<
     SiteSilo,
-    Response =
-      | ArmResourceUpdatedResponse<SiteSilo>
-      | ArmAcceptedLroResponse<LroHeaders = ArmLroLocationHeader<FinalResult = SiteSilo>>,
     Error = DefaultErrorResponse
   >;
 

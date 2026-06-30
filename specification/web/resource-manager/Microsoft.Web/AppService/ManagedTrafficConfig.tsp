@@ -57,7 +57,6 @@ interface ManagedTrafficConfigResources {
    */
   updateManagedTrafficConfig is ArmResourceCreateOrReplaceSync<
     ManagedTrafficConfigResource,
-    Response = ArmResourceUpdatedResponse<ManagedTrafficConfigResource>,
     Error = DefaultErrorResponse
   >;
 }

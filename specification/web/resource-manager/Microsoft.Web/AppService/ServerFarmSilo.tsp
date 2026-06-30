@@ -55,9 +55,6 @@ interface ServerFarmSiloResources {
    */
   createOrUpdateServerFarmSilo is ArmResourceCreateOrReplaceAsync<
     ServerFarmSilo,
-    Response =
-      | ArmResourceUpdatedResponse<ServerFarmSilo>
-      | ArmAcceptedLroResponse<LroHeaders = ArmLroLocationHeader<FinalResult = ServerFarmSilo>>,
     Error = DefaultErrorResponse
   >;
 

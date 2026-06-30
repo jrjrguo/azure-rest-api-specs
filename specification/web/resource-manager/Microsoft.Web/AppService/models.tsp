@@ -16480,6 +16480,11 @@ union SiloProvisioningState {
   Failed: "Failed",
 
   /**
+   * Provisioning was canceled.
+   */
+  Canceled: "Canceled",
+
+  /**
    * Resource is being deleted asynchronously.
    */
   Deleting: "Deleting",
@@ -16588,6 +16593,7 @@ model SiteSiloProperties {
   /**
    * Application setting overrides for the silo.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "App settings are an arbitrary, customer-defined set of string key/value pairs whose keys are not known to the resource provider, consistent with the existing StringDictionary app-settings contract in this provider."
   appSettingsOverrides?: Record<string>;
 
   /**
@@ -16599,7 +16605,7 @@ model SiteSiloProperties {
   /**
    * Whether the silo should follow the last known good revision.
    */
-  followLKG?: boolean;
+  followLastKnownGood?: boolean;
 
   /**
    * Short identifier of the revision currently applied to this silo.
@@ -16750,6 +16756,12 @@ model ManagedTrafficConfigProperties {
    */
   @identifiers(#["region"])
   endpoints?: EndpointTrafficConfig[];
+
+  /**
+   * Provisioning state of the managed traffic configuration.
+   */
+  @visibility(Lifecycle.Read)
+  provisioningState?: SiloProvisioningState;
 }
 
 /**
@@ -16768,6 +16780,12 @@ model LastKnownGoodProperties {
    */
   @visibility(Lifecycle.Read)
   createdTime?: utcDateTime;
+
+  /**
+   * Provisioning state of the last known good resource.
+   */
+  @visibility(Lifecycle.Read)
+  provisioningState?: SiloProvisioningState;
 }
 
 /**
